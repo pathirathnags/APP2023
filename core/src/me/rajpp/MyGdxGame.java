@@ -91,32 +91,28 @@ public class MyGdxGame extends ApplicationAdapter {
 	
 	public int findDrawAmount()
 	{
-	    int topCard = middleDeck.peek().getNumber();
+	    int topCard = middleDeck.peek().getRank();
 	    
 	    switch(topCard)
 	    {
 	        case 1:
 	            return 4;
-	            break;
 	        
 	        case 11:
 	            return 1;
-	            break;
 	            
 	        case 12:
 	            return 2;
-	            break;
 	            
 	        case 13:
 	            return 3;
-	            break;
 	    }
 	    
 	}
 	
 	public boolean ifDrawable()
 	{
-	    int topCard = middleDeck.peek().getNumber();
+	    int topCard = middleDeck.peek().getRank();
 	    if(topCard == 1 || topCard == 11 || topCard == 12 || topCard == 13)
 	    {
 	        return true;
