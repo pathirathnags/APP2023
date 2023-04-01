@@ -48,7 +48,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	
 	public void initalize()
 	{
-	    DeckStack originalDeck;
+	    DeckStack originalDeck = new DeckStack();
 	    String[] suits = {"club", "diamond", "heart", "spade"};
 	    int[] numbers = {1,2,3,4,5,6,7,8,9,10,11,12,13};
 	    
@@ -107,7 +107,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	        case 13:
 	            return 3;
 	    }
-	    
+	    return -1;
 	}
 	
 	public boolean ifDrawable()
