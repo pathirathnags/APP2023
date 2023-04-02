@@ -110,7 +110,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	    return -1;
 	}
 	
-	public boolean ifDrawable()
+	public boolean ifFacecard()
 	{
 	    int topCard = middleDeck.peek().getRank();
 	    if(topCard == 1 || topCard == 11 || topCard == 12 || topCard == 13)
@@ -119,4 +119,52 @@ public class MyGdxGame extends ApplicationAdapter {
 	    }
 	    return false;
 	}
+	
+	
+	public boolean slapable()
+	{
+	    try {
+	        return doubles() || marriage() || topBottom() || sandwich();
+	    }
+	    catch(ArrayIndexOutOfBoundsException e)
+	    {
+	        return false;
+	    }
+	}
+	
+	public boolean doubles()
+	{
+	    return middleDeck.peek().getRank() == middleDeck.get(middleDeck.size() - 2).getRank();
+	}
+	
+	public boolean marriage()
+	{
+	    if(middleDeck.peek().getRank() == 13)
+	    {
+	        if(middleDeck.get(middleDeck.size() - 2).getRank() == 12)
+	        {
+	            return true;
+	        }
+	    }
+	    else if(middleDeck.peek().getRank() == 12)
+	    {
+	        if(middleDeck.get(middleDeck.size() - 2).getRank() == 13)
+            {
+                return true;
+            }
+	    }
+	    return false;
+	}
+	
+	public boolean topBottom()
+	{
+	    return middleDeck.peek().getRank() == middleDeck.get(0).getRank();
+	}
+	
+	public boolean sandwich()
+	{
+	    return middleDeck.peek().getRank() == middleDeck.get(middleDeck.size() - 3).getRank();
+	}
+	
+	
 }
