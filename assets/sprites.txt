@@ -1,0 +1,444 @@
+sprites-0.png
+size: 1994, 1994
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+AceOfClubs
+  rotate: false
+  xy: 748, 1592
+  size: 249, 402
+  orig: 249, 402
+  offset: 0, 0
+  index: -1
+AceOfDiamonds
+  rotate: false
+  xy: 502, 396
+  size: 250, 397
+  orig: 250, 397
+  offset: 0, 0
+  index: -1
+AceOfHearts
+  rotate: false
+  xy: 200, 0
+  size: 251, 396
+  orig: 251, 396
+  offset: 0, 0
+  index: -1
+AceOfSpades
+  rotate: false
+  xy: 1238, 1191
+  size: 250, 401
+  orig: 250, 401
+  offset: 0, 0
+  index: -1
+BackofCard1
+  rotate: false
+  xy: 451, 0
+  size: 246, 396
+  orig: 246, 396
+  offset: 0, 0
+  index: -1
+BackOfCard2
+  rotate: false
+  xy: 752, 396
+  size: 245, 397
+  orig: 245, 397
+  offset: 0, 0
+  index: -1
+BackOfCard3
+  rotate: false
+  xy: 997, 1592
+  size: 245, 402
+  orig: 245, 402
+  offset: 0, 0
+  index: -1
+BackOfCard4
+  rotate: false
+  xy: 1488, 1191
+  size: 245, 401
+  orig: 245, 401
+  offset: 0, 0
+  index: -1
+EightOfClubs
+  rotate: false
+  xy: 1242, 1592
+  size: 250, 402
+  orig: 250, 402
+  offset: 0, 0
+  index: -1
+EightOfDiamonds
+  rotate: false
+  xy: 697, 0
+  size: 250, 396
+  orig: 250, 396
+  offset: 0, 0
+  index: -1
+EightOfHearts
+  rotate: false
+  xy: 997, 396
+  size: 249, 397
+  orig: 249, 397
+  offset: 0, 0
+  index: -1
+EightOfSpades
+  rotate: false
+  xy: 1733, 1191
+  size: 248, 401
+  orig: 248, 401
+  offset: 0, 0
+  index: -1
+FiveOfClubs
+  rotate: false
+  xy: 1492, 1592
+  size: 251, 402
+  orig: 251, 402
+  offset: 0, 0
+  index: -1
+FiveOfDiamonds
+  rotate: false
+  xy: 947, 0
+  size: 250, 396
+  orig: 250, 396
+  offset: 0, 0
+  index: -1
+FiveOfHearts
+  rotate: false
+  xy: 1197, 0
+  size: 249, 396
+  orig: 249, 396
+  offset: 0, 0
+  index: -1
+FiveOfSpades
+  rotate: false
+  xy: 1743, 1592
+  size: 251, 402
+  orig: 251, 402
+  offset: 0, 0
+  index: -1
+foldbutton
+  rotate: false
+  xy: 0, 0
+  size: 200, 100
+  orig: 200, 100
+  offset: 0, 0
+  index: -1
+FourOfDiamonds
+  rotate: false
+  xy: 1246, 396
+  size: 251, 397
+  orig: 251, 397
+  offset: 0, 0
+  index: -1
+FourOfHearts
+  rotate: false
+  xy: 1446, 0
+  size: 250, 396
+  orig: 250, 396
+  offset: 0, 0
+  index: -1
+FourOfSpades
+  rotate: false
+  xy: 0, 1592
+  size: 250, 401
+  orig: 250, 401
+  offset: 0, 0
+  index: -1
+JackOfDiamonds
+  rotate: false
+  xy: 1737, 793
+  size: 249, 398
+  orig: 249, 398
+  offset: 0, 0
+  index: -1
+JackOfHearts
+  rotate: false
+  xy: 0, 1191
+  size: 251, 398
+  orig: 251, 398
+  offset: 0, 0
+  index: -1
+KingOfDiamonds
+  rotate: false
+  xy: 1696, 0
+  size: 250, 396
+  orig: 250, 396
+  offset: 0, 0
+  index: -1
+KingOfHearts
+  rotate: false
+  xy: 0, 396
+  size: 251, 396
+  orig: 251, 396
+  offset: 0, 0
+  index: -1
+NineOfDiamonds
+  rotate: false
+  xy: 1497, 396
+  size: 246, 397
+  orig: 246, 397
+  offset: 0, 0
+  index: -1
+NineOfHearts
+  rotate: false
+  xy: 251, 1191
+  size: 247, 398
+  orig: 247, 398
+  offset: 0, 0
+  index: -1
+QueenOfDiamonds
+  rotate: false
+  xy: 1743, 396
+  size: 247, 397
+  orig: 247, 397
+  offset: 0, 0
+  index: -1
+QueenOfHearts
+  rotate: false
+  xy: 0, 793
+  size: 247, 397
+  orig: 247, 397
+  offset: 0, 0
+  index: -1
+QueenOfSpades
+  rotate: false
+  xy: 250, 1592
+  size: 247, 401
+  orig: 247, 401
+  offset: 0, 0
+  index: -1
+SevenOfDiamonds
+  rotate: false
+  xy: 251, 396
+  size: 251, 396
+  orig: 251, 396
+  offset: 0, 0
+  index: -1
+SevenOfHearts
+  rotate: false
+  xy: 247, 793
+  size: 250, 397
+  orig: 250, 397
+  offset: 0, 0
+  index: -1
+SixOfDiamonds
+  rotate: false
+  xy: 498, 1191
+  size: 246, 398
+  orig: 246, 398
+  offset: 0, 0
+  index: -1
+SixOfHearts
+  rotate: false
+  xy: 744, 1191
+  size: 246, 398
+  orig: 246, 398
+  offset: 0, 0
+  index: -1
+TenOfDiamonds
+  rotate: false
+  xy: 497, 793
+  size: 250, 397
+  orig: 250, 397
+  offset: 0, 0
+  index: -1
+TenOfHearts
+  rotate: false
+  xy: 747, 793
+  size: 250, 397
+  orig: 250, 397
+  offset: 0, 0
+  index: -1
+TenOfSpades
+  rotate: false
+  xy: 497, 1592
+  size: 251, 401
+  orig: 251, 401
+  offset: 0, 0
+  index: -1
+ThreeOfDiamonds
+  rotate: false
+  xy: 997, 793
+  size: 246, 397
+  orig: 246, 397
+  offset: 0, 0
+  index: -1
+ThreeOfHearts
+  rotate: false
+  xy: 990, 1191
+  size: 248, 398
+  orig: 248, 398
+  offset: 0, 0
+  index: -1
+TwoOfDiamonds
+  rotate: false
+  xy: 1243, 793
+  size: 243, 397
+  orig: 243, 397
+  offset: 0, 0
+  index: -1
+TwoOfHearts
+  rotate: false
+  xy: 1486, 793
+  size: 251, 397
+  orig: 251, 397
+  offset: 0, 0
+  index: -1
+
+sprites-1.png
+size: 1988, 1765
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+desertbackground
+  rotate: false
+  xy: 0, 0
+  size: 540, 960
+  orig: 540, 960
+  offset: 0, 0
+  index: -1
+END-GAME UI ES
+  rotate: false
+  xy: 540, 0
+  size: 540, 960
+  orig: 540, 960
+  offset: 0, 0
+  index: -1
+FourOfClubs
+  rotate: false
+  xy: 1080, 0
+  size: 251, 402
+  orig: 251, 402
+  offset: 0, 0
+  index: -1
+HOME UI ES
+  rotate: false
+  xy: 1331, 0
+  size: 540, 960
+  orig: 540, 960
+  offset: 0, 0
+  index: -1
+JackOfClubs
+  rotate: false
+  xy: 0, 960
+  size: 251, 402
+  orig: 251, 402
+  offset: 0, 0
+  index: -1
+JackOfSpades
+  rotate: false
+  xy: 251, 960
+  size: 251, 402
+  orig: 251, 402
+  offset: 0, 0
+  index: -1
+KingOfClubs
+  rotate: false
+  xy: 502, 960
+  size: 250, 402
+  orig: 250, 402
+  offset: 0, 0
+  index: -1
+KingOfSpades
+  rotate: false
+  xy: 752, 960
+  size: 251, 402
+  orig: 251, 402
+  offset: 0, 0
+  index: -1
+NineOfClubs
+  rotate: false
+  xy: 1003, 960
+  size: 246, 402
+  orig: 246, 402
+  offset: 0, 0
+  index: -1
+NineOfSpades
+  rotate: false
+  xy: 1249, 960
+  size: 246, 402
+  orig: 246, 402
+  offset: 0, 0
+  index: -1
+QueenOfClubs
+  rotate: false
+  xy: 1495, 960
+  size: 247, 402
+  orig: 247, 402
+  offset: 0, 0
+  index: -1
+SevenOfClubs
+  rotate: false
+  xy: 1742, 960
+  size: 246, 402
+  orig: 246, 402
+  offset: 0, 0
+  index: -1
+SevenOfSpades
+  rotate: false
+  xy: 0, 1362
+  size: 251, 402
+  orig: 251, 402
+  offset: 0, 0
+  index: -1
+SixOfClubs
+  rotate: false
+  xy: 251, 1362
+  size: 246, 402
+  orig: 246, 402
+  offset: 0, 0
+  index: -1
+SixOfSpades
+  rotate: false
+  xy: 497, 1362
+  size: 246, 403
+  orig: 246, 403
+  offset: 0, 0
+  index: -1
+TenOfClubs
+  rotate: false
+  xy: 743, 1362
+  size: 250, 402
+  orig: 250, 402
+  offset: 0, 0
+  index: -1
+ThreeOfClubs
+  rotate: false
+  xy: 993, 1362
+  size: 246, 402
+  orig: 246, 402
+  offset: 0, 0
+  index: -1
+ThreeOfSpades
+  rotate: false
+  xy: 1239, 1362
+  size: 245, 402
+  orig: 245, 402
+  offset: 0, 0
+  index: -1
+TwoOfClubs
+  rotate: false
+  xy: 1484, 1362
+  size: 250, 402
+  orig: 250, 402
+  offset: 0, 0
+  index: -1
+TwoOfSpades
+  rotate: false
+  xy: 1734, 1362
+  size: 249, 403
+  orig: 249, 403
+  offset: 0, 0
+  index: -1
+
+sprites-2.png
+size: 540, 960
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+RULES UI ES
+  rotate: false
+  xy: 0, 0
+  size: 540, 960
+  orig: 540, 960
+  offset: 0, 0
+  index: -1
