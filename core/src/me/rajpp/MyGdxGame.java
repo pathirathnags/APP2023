@@ -3,18 +3,30 @@ package me.rajpp;
 import java.util.Random;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.Screen;
 
-public class MyGdxGame extends ApplicationAdapter {
-	private SpriteBatch batch;
-	private Texture img;
-	private DeckStack playerDeck;
-	private DeckStack botDeck;
-	private DeckStack middleDeck;
-	
+
+/*import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;*/
+
+
+public class MyGdxGame extends ApplicationAdapter implements Screen{
 	
 	private Texture backofCard1  = new Texture(Gdx.files.internal("BackofCard1.png"));
 	private Texture backOfCard2 = new Texture(Gdx.files.internal("BackOfCard2.png"));
@@ -76,7 +88,79 @@ public class MyGdxGame extends ApplicationAdapter {
 	private Texture kingOfSpades = new Texture(Gdx.files.internal("KingOfSpades.png"));
 
 	
+	SpriteBatch batch;
+	BitmapFont font;
+	//Texture img = new Texture(Gdx.files.internal("desertbackground.png"));
+
+	DeckStack playerDeck;
+	DeckStack botDeck;
+	DeckStack middleDeck;
 	
+	TextureAtlas textureAtlas;
+	HelloWorldGame game;
+	
+    OrthographicCamera camera;
+    ExtendViewport viewport;
+	
+	//Sprite sprite = textureAtlas.createSprite("AceOfClubs");
+	Sprite AceOfClubs;
+	
+	public MyGdxGame(HelloWorldGame game) {
+		this.game = game;
+	}
+	
+	  @Override public void render(float delta) { 
+		  Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+		  //everything will be displayed here!!
+		  
+		  
+		  //win and lose condition
+		  //can also do a button my gdx.input.getX() or getY()
+	        if(Gdx.input.isKeyPressed(Input.Keys.Q)){
+	        	game.setScreen(new EndScreen(game));
+	        }
+	        
+	        //calling start Game
+	        startGame();
+
+	        game.batch.begin();
+	       // drawSprite("AceOfClubs", 0 ,0);
+	        
+	        game.batch.draw(AceOfClubs, 0, 0);
+	        //game.batch.draw(img, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	        game.font.draw(game.batch, "Press Q to quit :(", Gdx.graphics.getWidth() * .25f, Gdx.graphics.getHeight() * .75f);
+	        
+	        game.batch.end();
+	  }
+	 
+		@Override
+		public void create () {
+			camera = new OrthographicCamera();
+	        viewport = new ExtendViewport(800, 600, camera);
+	        
+			//textureAtlas = new TextureAtlas("sprites.txt");
+			AceOfClubs = textureAtlas.createSprite("AceOfClubs");
+			
+			font = new BitmapFont();
+			batch = new SpriteBatch();
+		}
+		
+		
+		private void drawSprite(String card, float x, float y) {
+		    Sprite sprite = textureAtlas.createSprite(card);
+
+		    sprite.setPosition(x, y);
+
+		    sprite.draw(batch);
+		}
+		
+	@Override
+	public void hide() {
+		Gdx.input.setInputProcessor(null);
+		
+	}
+
 	public void startGame()
 	{
 	    playerDeck = new DeckStack();
@@ -87,24 +171,13 @@ public class MyGdxGame extends ApplicationAdapter {
 	   
 	}
 	
-	@Override
-	public void create () {
-		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
-	}
 
-	@Override
-	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();
-	}
 	
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
+		//img.dispose();
+		textureAtlas.dispose();
 	}
 	
 	
@@ -112,9 +185,9 @@ public class MyGdxGame extends ApplicationAdapter {
 	{
 	    DeckStack originalDeck = new DeckStack();
 	    String[] suits = {"club", "diamond", "heart", "spade"};
-	    int[] rank = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+	    int[] numbers = {1,2,3,4,5,6,7,8,9,10,11,12,13};
 	    
-	    for(int num: rank)
+	    for(int num: numbers)
 	    {
 	        for(String suit: suits)
 	        {
@@ -227,157 +300,14 @@ public class MyGdxGame extends ApplicationAdapter {
 	{
 	    return middleDeck.peek().getRank() == middleDeck.get(middleDeck.size() - 3).getRank();
 	}
-	
-	public Texture cardImage(Card card)
-	{
-	    int rank = card.getRank();
-	    String suit = card.getSuit();
-	    
-	    if(rank == 1)
-	    {
-	        if(suit.equals("heart"))
-	            return aceOfHearts;
-	        if(suit.equals("diamond"))
-	            return aceOfDiamonds;
-	        if(suit.equals("club"))
-	            return aceOfClubs;
-	        if(suit.equals("spade"))
-	            return aceOfSpades;
-	    }
-	    else if(rank == 2)
-        {
-            if(suit.equals("heart"))
-                return twoOfHearts;
-            if(suit.equals("diamond"))
-                return twoOfDiamonds;
-            if(suit.equals("club"))
-                return twoOfClubs;
-            if(suit.equals("spade"))
-                return twoOfSpades;
-        }
-	    else if(rank == 3)
-        {
-            if(suit.equals("heart"))
-                return threeOfHearts;
-            if(suit.equals("diamond"))
-                return threeOfDiamonds;
-            if(suit.equals("club"))
-                return threeOfClubs;
-            if(suit.equals("spade"))
-                return threeOfSpades;
-        }
-	    else if(rank == 4)
-        {
-            if(suit.equals("heart"))
-                return fourOfHearts;
-            if(suit.equals("diamond"))
-                return fourOfDiamonds;
-            if(suit.equals("club"))
-                return fourOfClubs;
-            if(suit.equals("spade"))
-                return fourOfSpades;
-        }
-	    else if(rank == 5)
-        {
-            if(suit.equals("heart"))
-                return fiveOfHearts;
-            if(suit.equals("diamond"))
-                return fiveOfDiamonds;
-            if(suit.equals("club"))
-                return fiveOfClubs;
-            if(suit.equals("spade"))
-                return fiveOfSpades;
-        }
-	    else if(rank == 6)
-        {
-            if(suit.equals("heart"))
-                return sixOfHearts;
-            if(suit.equals("diamond"))
-                return sixOfDiamonds;
-            if(suit.equals("club"))
-                return sixOfClubs;
-            if(suit.equals("spade"))
-                return sixOfSpades;
-        }
-	    else if(rank == 7)
-        {
-            if(suit.equals("heart"))
-                return sevenOfHearts;
-            if(suit.equals("diamond"))
-                return sevenOfDiamonds;
-            if(suit.equals("club"))
-                return sevenOfClubs;
-            if(suit.equals("spade"))
-                return sevenOfSpades;
-        }
-	    else if(rank == 8)
-        {
-            if(suit.equals("heart"))
-                return eightOfHearts;
-            if(suit.equals("diamond"))
-                return eightOfDiamonds;
-            if(suit.equals("club"))
-                return eightOfClubs;
-            if(suit.equals("spade"))
-                return eightOfSpades;
-        }
-	    else if(rank == 9)
-        {
-            if(suit.equals("heart"))
-                return nineOfHearts;
-            if(suit.equals("diamond"))
-                return nineOfDiamonds;
-            if(suit.equals("club"))
-                return nineOfClubs;
-            if(suit.equals("spade"))
-                return nineOfSpades;
-        }
-	    else if(rank == 10)
-        {
-            if(suit.equals("heart"))
-                return tenOfHearts;
-            if(suit.equals("diamond"))
-                return tenOfDiamonds;
-            if(suit.equals("club"))
-                return tenOfClubs;
-            if(suit.equals("spade"))
-                return tenOfSpades;
-        }
-	    else if(rank == 11)
-        {
-            if(suit.equals("heart"))
-                return jackOfHearts;
-            if(suit.equals("diamond"))
-                return jackOfDiamonds;
-            if(suit.equals("club"))
-                return jackOfClubs;
-            if(suit.equals("spade"))
-                return jackOfSpades;
-        }
-	    else if(rank == 12)
-        {
-            if(suit.equals("heart"))
-                return queenOfHearts;
-            if(suit.equals("diamond"))
-                return queenOfDiamonds;
-            if(suit.equals("club"))
-                return queenOfClubs;
-            if(suit.equals("spade"))
-                return queenOfSpades;
-        }
-	    else if(rank == 13)
-        {
-            if(suit.equals("heart"))
-                return kingOfHearts;
-            if(suit.equals("diamond"))
-                return kingOfDiamonds;
-            if(suit.equals("club"))
-                return kingOfClubs;
-            if(suit.equals("spade"))
-                return kingOfSpades;
-        }
-	    return null; 
+
+
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		
 	}
 	
-	
 }
+
