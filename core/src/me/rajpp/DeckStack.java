@@ -26,7 +26,7 @@ public class DeckStack
         if(!isEmpty())
         {
             Card popValue = deck.get(deck.size() - 1);
-            deck.remove(deck.size - 1);
+            deck.remove(deck.size() - 1);
             return popValue;
         }
         return null;
