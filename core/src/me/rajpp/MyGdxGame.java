@@ -233,9 +233,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	    int rank = card.getRank();
 	    String suit = card.getSuit();
 	    
-//	    String[] suits = {"club", "diamond", "heart", "spade"};
-//      int[] rank = {1,2,3,4,5,6,7,8,9,10,11,12,13};
-	    
 	    if(rank == 1)
 	    {
 	        if(suit.equals("heart"))
